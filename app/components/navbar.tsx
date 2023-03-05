@@ -20,7 +20,12 @@ export default function Navbar() {
         />
 
         <div className="flex flex-row">
-          <p className="text-gray-800 mx-1.5 sm:mx-6 font-bold">{t("main")}</p>
+          <p
+            className="text-gray-800 mx-1.5 sm:mx-6 font-bold"
+            onClick={() => router.push(`/`)}
+          >
+            {t("main")}
+          </p>
           <p className="text-gray-800 mx-1.5 sm:mx-6 font-bold">
             {t("prices")}
           </p>

@@ -58,7 +58,14 @@ export default function TrackerCard() {
           <h1>
             {t("shipmentNumber") + " " + shipment.shipment.TrackingNumber}
           </h1>
-          <h2 className="text-green-600 font-bold text-2xl">
+          <h2
+            className={clsx(
+              " font-bold text-2xl",
+              shipment.shipment.CurrentStatus?.state === "DELIVERED"
+                ? "text-green-600"
+                : "text-yellow-400"
+            )}
+          >
             {shipment.shipment.CurrentStatus?.state
               ? shipment.shipment.CurrentStatus?.state.slice(0, 1) +
                 shipment.shipment.CurrentStatus?.state
